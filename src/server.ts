@@ -17,6 +17,7 @@ import { ApifyOrchestrator } from "./apify-orchestrator.js";
 import { sendTelegramSaleAlert } from "./notifier.js";
 import { ScraperCache } from "./cache.js";
 import { getTeaserSample, cleanForLLM, estimateTokens } from "./teaser.js";
+import { handleMcpJsonRpc } from "./mcp-server.js";
 
 export class ApifyM2MGatewayServer {
   private nonceStore = new MemoryNonceStore();
@@ -113,7 +114,26 @@ export class ApifyM2MGatewayServer {
       });
     }
 
-    // 2. Match actor endpoint
+    // 2. Model Context Protocol (MCP) HTTP Endpoint for Smithery & Remote Clients
+    if (path === "/mcp" || path === "/api/mcp") {
+      if (req.method === "POST") {
+        const body = await this.parseBody(req);
+        const mcpResponse = await handleMcpJsonRpc(body);
+        return this.sendJson(res, 200, mcpResponse || {});
+      } else {
+        return this.sendJson(res, 200, {
+          name: "msai-apify-m2m-suite",
+          version: "1.0.0",
+          protocol: "mcp",
+          transport: "http-jsonrpc",
+          endpoint: "https://apifym2mgateway.vercel.app/mcp",
+          toolsCount: Object.keys(APIFY_ACTORS).length,
+          capabilities: { tools: {} },
+        });
+      }
+    }
+
+    // 3. Match actor endpoint
     const actor = this.endpointMap.get(path);
     if (!actor) {
       return this.sendJson(res, 404, { error: "Route not found", path });

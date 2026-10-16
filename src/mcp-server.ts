@@ -40,7 +40,7 @@ class ApifyMCPServer {
     });
   }
 
-  private async handleMessage(req: any): Promise<any> {
+  public async handleMessage(req: any): Promise<any> {
     const { id, method, params } = req;
 
     switch (method) {
@@ -141,7 +141,12 @@ class ApifyMCPServer {
   }
 }
 
-// Start MCP server if run directly
+export const defaultMcpServer = new ApifyMCPServer();
+export async function handleMcpJsonRpc(req: any): Promise<any> {
+  return defaultMcpServer.handleMessage(req);
+}
+
+// Start stdio listener if run directly via CLI
 if (process.argv[1]?.endsWith("mcp-server.ts") || process.argv[1]?.endsWith("mcp-server.js")) {
-  new ApifyMCPServer();
+  // Instance initialized above handles stdio
 }
