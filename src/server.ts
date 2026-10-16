@@ -114,6 +114,14 @@ export class ApifyM2MGatewayServer {
       });
     }
 
+    // Glama.ai Ownership Claim Verification Endpoint
+    if (path === "/.well-known/glama.json") {
+      return this.sendJson(res, 200, {
+        "$schema": "https://glama.ai/mcp/schemas/connector.json",
+        "claim": "glama_claim_9hXflS3jeiPo-togNAYklyKll5Vh8suF",
+      });
+    }
+
     // 2. Model Context Protocol (MCP) HTTP Endpoint for Smithery & Remote Clients
     if (path === "/mcp" || path === "/api/mcp") {
       if (req.method === "POST") {
