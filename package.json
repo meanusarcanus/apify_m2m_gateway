@@ -1,0 +1,23 @@
+{
+  "name": "apify-m2m-gateway",
+  "version": "1.0.0",
+  "description": "Autonomous Machine-to-Machine (M2M) x402 Gateway for Monetizing Apify Actors",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "bun run src/server.ts",
+    "test": "bun test",
+    "mcp": "bun run src/mcp-server.ts",
+    "demo": "bun run examples/agent-demo.ts"
+  },
+  "dependencies": {
+    "apify-client": "^2.11.0",
+    "dotenv": "^16.4.5",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}

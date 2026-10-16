@@ -1,0 +1,56 @@
+{
+  "$schema": "https://docs.nevermined.io/schemas/metadata-v2.json",
+  "name": "MSAI 17 Apify Autonomous Scraper Suite",
+  "description": "High-density web scraping, SERP search grounding, Reddit sentiment, and social intelligence suite for autonomous AI agents on Base.",
+  "author": "meanusarcanus-2432",
+  "license": "Commercial API",
+  "categories": ["AI Agents", "Data Feeds", "Web Scraping", "Market Intelligence"],
+  "service": {
+    "type": "api",
+    "baseUrl": "https://apifym2mgateway.vercel.app",
+    "openApiUrl": "https://apifym2mgateway.vercel.app/api/v1/catalog",
+    "authType": "x402",
+    "network": "base",
+    "chainId": 8453,
+    "paymentToken": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "recipientAddress": "0x41215D81180560447cbbdB47bb08D10008204D58"
+  },
+  "pricingPlan": {
+    "type": "pay-per-request",
+    "currency": "USDC",
+    "minPricePerCall": "0.002",
+    "maxPricePerCall": "0.020",
+    "endpoints": [
+      {
+        "path": "/api/v1/crawl",
+        "method": "POST",
+        "price": "0.010",
+        "description": "Crawl entire documentation sites or sitemaps into clean, ad-free Markdown."
+      },
+      {
+        "path": "/api/v1/google/search",
+        "method": "POST",
+        "price": "0.005",
+        "description": "Real-time Google SERP organic search results and snippets."
+      },
+      {
+        "path": "/api/v1/reddit/search",
+        "method": "POST",
+        "price": "0.005",
+        "description": "Reddit posts, comments, upvotes, and sentiment analysis."
+      },
+      {
+        "path": "/api/v1/b2b/leads",
+        "method": "POST",
+        "price": "0.020",
+        "description": "B2B executive contacts, verified domains, and company tech stacks."
+      },
+      {
+        "path": "/api/v1/tiktok/trending",
+        "method": "POST",
+        "price": "0.008",
+        "description": "Trending TikTok videos, hashtags, views, and creator metrics."
+      }
+    ]
+  }
+}

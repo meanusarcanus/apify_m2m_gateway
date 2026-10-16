@@ -1,0 +1,27 @@
+name: msai-apify-m2m-suite
+version: 1.0.0
+description: Autonomous Machine-to-Machine MCP Suite for 17 Apify Scrapers (Markdown Crawler, Google Search, Reddit Sentiment, TikTok, LinkedIn, B2B Leads) with x402 Base USDC micropayments.
+repository: https://github.com/meanusarcanus-2432/apify_m2m_gateway
+startCommand:
+  type: stdio
+  config:
+    command: bun
+    args:
+      - run
+      - src/mcp-server.ts
+    env:
+      APIFY_API_TOKEN:
+        type: string
+        description: Optional Apify API Token for live actor execution.
+        required: false
+tools:
+  - name: markdown_crawler
+    description: Crawls websites, documentation, and sitemaps into clean, ad-free Markdown for LLMs and RAG pipelines.
+  - name: google_search
+    description: Extracts real-time Google SERP organic search results, knowledge panels, and snippets.
+  - name: reddit_scraper
+    description: Scrapes subreddits, posts, comments, and upvotes for real-time sentiment analysis and trend discovery.
+  - name: tiktok_scraper
+    description: Extracts viral TikTok videos, hashtags, views, likes, and creator metrics.
+  - name: b2b_lead_enricher
+    description: Enriches company domains with decision-maker contact details, LinkedIn profiles, and tech stacks.
