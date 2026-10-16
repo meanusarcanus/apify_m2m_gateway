@@ -118,7 +118,7 @@ export class ApifyM2MGatewayServer {
     if (path === "/.well-known/glama.json") {
       return this.sendJson(res, 200, {
         "$schema": "https://glama.ai/mcp/schemas/connector.json",
-        "claim": "glama_claim_9hXflS3jeiPo-togNAYklyKll5Vh8suF",
+        "claim": "glama_claim_9hXflS3jeiPo-togNAYk1yKtl5vhBsuF",
       });
     }
 
