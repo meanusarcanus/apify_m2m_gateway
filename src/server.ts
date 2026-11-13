@@ -134,7 +134,9 @@ export class ApifyM2MGatewayServer {
           version: "1.0.0",
           protocol: "mcp",
           transport: "http-jsonrpc",
-          endpoint: "https://apifym2mgateway.vercel.app/mcp",
+          endpoint: process.env.GATEWAY_URL
+            ? `${process.env.GATEWAY_URL.replace(/\/$/, "")}/mcp`
+            : "https://apify-m2m-gateway.onrender.com/mcp",
           toolsCount: Object.keys(APIFY_ACTORS).length,
           capabilities: { tools: {} },
         });

@@ -1,4 +1,4 @@
-const GATEWAY_URL = process.env.MSAI_GATEWAY_URL || "https://apifym2mgateway.vercel.app";
+const GATEWAY_URL = process.env.MSAI_GATEWAY_URL || "https://apify-m2m-gateway.onrender.com";
 
 export interface ActionContext {
   runtime: any;

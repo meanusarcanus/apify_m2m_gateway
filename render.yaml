@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: apify-m2m-gateway
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.15.0
+      - key: MERCHANT_WALLET_ADDRESS
+        value: 0x41215D81180560447cbbdB47bb08D10008204D58
+      - key: GATEWAY_URL
+        value: https://apify-m2m-gateway.onrender.com

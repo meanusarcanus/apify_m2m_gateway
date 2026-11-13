@@ -7,8 +7,8 @@
   "categories": ["AI Agents", "Data Feeds", "Web Scraping", "Market Intelligence"],
   "service": {
     "type": "api",
-    "baseUrl": "https://apifym2mgateway.vercel.app",
-    "openApiUrl": "https://apifym2mgateway.vercel.app/api/v1/catalog",
+    "baseUrl": "https://apify-m2m-gateway.onrender.com",
+    "openApiUrl": "https://apify-m2m-gateway.onrender.com/api/v1/catalog",
     "authType": "x402",
     "network": "base",
     "chainId": 8453,
