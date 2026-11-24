@@ -1,5 +1,7 @@
 # MSAI Apify M2M Autonomous Gateway
 
+[![meanusarcanus/apify_m2m_gateway MCP server](https://glama.ai/mcp/servers/meanusarcanus/apify_m2m_gateway/badges/score.svg)](https://glama.ai/mcp/servers/meanusarcanus/apify_m2m_gateway)
+
 An autonomous, machine-to-machine (M2M) monetization gateway powered by the **x402 protocol** and **Base USDC micropayments**, wrapping your **17 Apify Scraper Actors** into direct revenue streams for AI agents, research swarms, and Claude/Cursor tools.
 
 ---
